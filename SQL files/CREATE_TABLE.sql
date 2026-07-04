@@ -1,3 +1,5 @@
+
+
 /*IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'HospitalDB')
 DROP DATABASE HospitalDB;
 GO
@@ -81,14 +83,19 @@ GO*/
 GO*/
 
 -- Table: Medical History (Weak Entity)
-/*CREATE TABLE Medical_History (
+CREATE TABLE Medical_History (
     HistoryID INT PRIMARY KEY IDENTITY(1,1),
     RecordID INT NOT NULL FOREIGN KEY REFERENCES Medical_Records(RecordID),
-    ICD_Code VARCHAR(20) NOT NULL,
-    Diagnosis NVARCHAR(MAX) NOT NULL,
+    ICD_Code VARCHAR(20) NOT NULL, 
+    Diagnosis NVARCHAR(MAX) NOT NULL, 
+    MedicationHistory NVARCHAR(MAX) NULL, 
+    SmokingHistory VARCHAR(20) CHECK (SmokingHistory IN ('Yes', 'No', 'Former')) NULL,
+    Height_cm DECIMAL(5, 2) NULL,
+    Weight_kg DECIMAL(5, 2) NULL,
+    BloodPressure VARCHAR(20) NULL,
     RecordDate DATE NOT NULL
 );
-GO*/
+GO
 
 -- Table: Lab Results
 /*CREATE TABLE Lab_Results (
