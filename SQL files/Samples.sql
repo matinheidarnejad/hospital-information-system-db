@@ -83,17 +83,18 @@ GO*/
 (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
 GO*/
 
-/*INSERT INTO Medical_History (RecordID, ICD_Code, Diagnosis, RecordDate) VALUES
-(1, 'I10', 'Essential (primary) hypertension', '2026-01-10'),
-(2, 'E11.9', 'Type 2 diabetes without complications', '2026-02-12'),
-(3, 'J45.909', 'Unspecified asthma', '2026-03-15'),
-(4, 'M17.9', 'Osteoarthritis of knee', '2026-04-01'),
-(5, 'F32.9', 'Major depressive disorder', '2026-05-20'),
-(6, 'I25.10', 'Atherosclerotic heart disease', '2026-06-11'),
-(7, 'N18.9', 'Chronic kidney disease', '2026-06-22'),
-(8, 'J06.9', 'Acute upper respiratory infection', '2026-07-01'),
-(9, 'S06.9X9A', 'Intracranial injury', '2026-07-05'),
-(10, 'L30.9', 'Unspecified dermatitis', '2026-07-07');
+/*-- 8. Medical History (UPDATED with complete anthropometric and vital data)
+INSERT INTO Medical_History (RecordID, ICD_Code, Diagnosis, MedicationHistory, SmokingHistory, Height_cm, Weight_kg, BloodPressure, RecordDate) VALUES
+(1, 'I25.10', N'Coronary artery disease', N'Aspirin 80mg, Atorvastatin 20mg', 'Yes', 175.50, 82.30, '135/85', '2025-01-15'),
+(2, 'E11.9', N'Type 2 Diabetes Mellitus', N'Metformin 500mg', 'No', 162.00, 74.50, '120/80', '2024-11-23'),
+(3, 'J45.909', N'Asthma, unspecified', N'Salbutamol Inhaler', 'Former', 180.00, 79.00, '118/75', '2023-05-12'),
+(4, 'I10', N'Essential Hypertension', N'Losartan 50mg', 'No', 170.00, 85.00, '145/95', '2025-02-15'),
+(5, 'E03.9', N'Hypothyroidism, unspecified', N'Levothyroxine 100mcg', 'No', 158.00, 68.00, '110/70', '2024-06-20'),
+(6, 'M17.11', N'Osteoarthritis of right knee', N'Acetaminophen 500mg', 'No', 165.00, 90.50, '130/80', '2023-08-10'),
+(7, 'K21.9', N'Gastro-esophageal reflux disease', N'Omeprazole 20mg', 'Former', 172.00, 78.00, '125/82', '2025-01-05'),
+(8, 'N18.9', N'Chronic kidney disease, unspecified', N'Epoetin Alfa', 'No', 178.00, 81.00, '140/90', '2022-12-01'),
+(9, 'G43.909', N'Migraine, unspecified', N'Sumatriptan 50mg', 'Yes', 160.00, 55.00, '115/75', '2024-10-15'),
+(10, 'F32.9', N'Major depressive disorder', N'Sertraline 50mg', 'No', 168.00, 70.00, '120/80', '2025-03-01');
 GO*/
 
 /*INSERT INTO Lab_Results (PatientID, StaffID, TestType, ResultDetails, IsCritical, TestDate) VALUES
