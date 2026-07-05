@@ -207,12 +207,14 @@ GO
 
 CREATE TABLE Alerts (
     AlertID INT PRIMARY KEY IDENTITY(1,1),
-    LogID INT NOT NULL FOREIGN KEY REFERENCES IoT_Logs(LogID),
-    Severity VARCHAR(20) CHECK (Severity IN ('Moderate', 'Critical')) NOT NULL,
+    LogID INT NULL FOREIGN KEY REFERENCES IoT_Logs(LogID), 
+    ResultID INT NULL FOREIGN KEY REFERENCES Lab_Results(ResultID), 
+    Severity VARCHAR(20) CHECK (Severity IN ('Moderate', 'Critical')) NOT NULL, 
     Status VARCHAR(20) CHECK (Status IN ('Unchecked', 'Acknowledged', 'Resolved')) NOT NULL,
-    GeneratedAt DATETIME NOT NULL,
-    ResolvedAt DATETIME NULL,
-    ResponderID INT NULL FOREIGN KEY REFERENCES Staff(StaffID)
+    GeneratedAt DATETIME NOT NULL, 
+    ResolvedAt DATETIME NULL, 
+    ResponderID INT NULL FOREIGN KEY REFERENCES Staff(StaffID),
+    CONSTRAINT CK_Alert_Source CHECK (LogID IS NOT NULL OR ResultID IS NOT NULL)
 );
 GO
 
