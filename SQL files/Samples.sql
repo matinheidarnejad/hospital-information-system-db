@@ -1,4 +1,4 @@
-/*-- =================================================================
+-- =================================================================
 -- 1. Patients (10 records)
 -- =================================================================
 INSERT INTO Patients (NationalID, FirstName, LastName, Gender, DOB, Phone, Address) VALUES
@@ -12,9 +12,9 @@ INSERT INTO Patients (NationalID, FirstName, LastName, Gender, DOB, Phone, Addre
 ('6677889900', 'Fiona', 'Davis', 'Female', '1979-06-22', '890-123-4567', '258 Walnut St, San Diego, CA 92101'),
 ('7788990011', 'George', 'Harris', 'Male', '1998-08-14', '901-234-5678', '369 Spruce Ave, Dallas, TX 75201'),
 ('8899001122', 'Helen', 'Clark', 'Female', '1990-04-30', '012-345-6789', '741 Ash Rd, San Jose, CA 95101');
-GO*/
+GO
 
-/*INSERT INTO Staff (FirstName, LastName, Role, Specialty, Phone) VALUES
+INSERT INTO Staff (FirstName, LastName, Role, Specialty, Phone) VALUES
 ('Adam', 'Hart', 'Doctor', 'Cardiology', '111-111-1111'),
 ('Bruce', 'Wayne', 'Doctor', 'Neurology', '222-222-2222'),
 ('Clark', 'Kent', 'Doctor', 'Orthopedics', '333-333-3333'),
@@ -25,9 +25,9 @@ GO*/
 ('Peter', 'Parker', 'Nurse', NULL, '888-888-8888'),
 ('Tony', 'Stark', 'Admin', NULL, '999-999-9999'),
 ('Steve', 'Rogers', 'Admin', NULL, '101-101-1010');
-GO*/
+GO
 
-/*INSERT INTO Appointments (PatientID, StaffID, ApptDate, ApptType, Status) VALUES
+INSERT INTO Appointments (PatientID, StaffID, ApptDate, ApptType, Status) VALUES
 (1, 1, '2026-07-15 09:00:00', 'InPerson', 'Scheduled'),
 (2, 2, '2026-07-16 10:30:00', 'Online', 'Scheduled'),
 (3, 3, '2026-07-17 11:00:00', 'InPerson', 'Cancelled'),
@@ -38,9 +38,9 @@ GO*/
 (8, 3, '2026-07-22 16:00:00', 'InPerson', 'Cancelled'),
 (9, 4, '2026-07-23 08:30:00', 'InPerson', 'Scheduled'),
 (10, 5, '2026-07-24 13:00:00', 'Online', 'Scheduled');
-GO*/
+GO
 
-/*INSERT INTO Departments (DeptName) VALUES
+INSERT INTO Departments (DeptName) VALUES
 ('Cardiology'),
 ('Neurology'),
 ('Orthopedics'),
@@ -51,9 +51,9 @@ GO*/
 ('ENT'),
 ('Ophthalmology'),
 ('General Surgery');
-GO*/
+GO
 
-/*INSERT INTO Beds (DepartmentID, Status) VALUES
+INSERT INTO Beds (DepartmentID, Status) VALUES
 (1, 'Available'),
 (2, 'Occupied'),
 (3, 'Reserved'),
@@ -64,9 +64,9 @@ GO*/
 (8, 'Occupied'),
 (9, 'Available'),
 (10, 'Available');
-GO*/
+GO
 
-/*INSERT INTO Inpatient_Transfers (PatientID, BedID, StartDate, EndDate) VALUES
+INSERT INTO Inpatient_Transfers (PatientID, BedID, StartDate, EndDate) VALUES
 (1, 2, '2026-06-01 08:00:00', '2026-06-05 10:00:00'),
 (2, 5, '2026-06-10 09:00:00', '2026-06-15 11:00:00'),
 (3, 3, '2026-06-12 10:00:00', NULL),
@@ -77,13 +77,13 @@ GO*/
 (8, 2, '2026-06-25 15:00:00', '2026-06-30 16:00:00'),
 (9, 5, '2026-06-28 08:00:00', NULL),
 (10, 10, '2026-07-01 09:00:00', '2026-07-03 17:00:00');
-GO*/
+GO
 
-/*INSERT INTO Medical_Records (PatientID) VALUES
+INSERT INTO Medical_Records (PatientID) VALUES
 (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
-GO*/
+GO
 
-/*-- 8. Medical History (UPDATED with complete anthropometric and vital data)
+-- 8. Medical History (UPDATED with complete anthropometric and vital data)
 INSERT INTO Medical_History (RecordID, ICD_Code, Diagnosis, MedicationHistory, SmokingHistory, Height_cm, Weight_kg, BloodPressure, RecordDate) VALUES
 (1, 'I25.10', N'Coronary artery disease', N'Aspirin 80mg, Atorvastatin 20mg', 'Yes', 175.50, 82.30, '135/85', '2025-01-15'),
 (2, 'E11.9', N'Type 2 Diabetes Mellitus', N'Metformin 500mg', 'No', 162.00, 74.50, '120/80', '2024-11-23'),
@@ -95,22 +95,22 @@ INSERT INTO Medical_History (RecordID, ICD_Code, Diagnosis, MedicationHistory, S
 (8, 'N18.9', N'Chronic kidney disease, unspecified', N'Epoetin Alfa', 'No', 178.00, 81.00, '140/90', '2022-12-01'),
 (9, 'G43.909', N'Migraine, unspecified', N'Sumatriptan 50mg', 'Yes', 160.00, 55.00, '115/75', '2024-10-15'),
 (10, 'F32.9', N'Major depressive disorder', N'Sertraline 50mg', 'No', 168.00, 70.00, '120/80', '2025-03-01');
-GO*/
+GO
 
-/*INSERT INTO Lab_Results (PatientID, StaffID, TestType, ResultDetails, IsCritical, TestDate) VALUES
-(1, 1, 'Blood Test', 'Cholesterol: 240, Triglycerides: 190', 0, '2026-07-01'),
-(2, 2, 'MRI', 'No abnormalities detected in brain', 0, '2026-07-02'),
-(3, 3, 'X-Ray', 'Fracture detected in right tibia', 1, '2026-07-03'),
-(4, 4, 'Blood Test', 'Hemoglobin: 10.5 (Low), Platelets: 150', 1, '2026-07-04'),
-(5, 5, 'ECG', 'Normal sinus rhythm', 0, '2026-07-05'),
-(6, 1, 'Urine Test', 'Protein: 3+, Glucose: Negative', 0, '2026-07-06'),
-(7, 2, 'CT Scan', 'Kidney stone found in left ureter', 1, '2026-07-07'),
-(8, 3, 'Blood Test', 'WBC: 12000 (Elevated), CRP: 45', 0, '2026-07-08'),
-(9, 4, 'Ultrasound', 'Gallbladder sludge', 0, '2026-07-09'),
-(10, 5, 'Blood Test', 'Potassium: 5.8 (High), Sodium: 132', 1, '2026-07-10');
-GO*/
+INSERT INTO Lab_Results (PatientID, StaffID, DepartmentID, TestType, ResultDetails, IsCritical, Status, TestDate) VALUES
+(1, 1, 6, 'CBC (Complete Blood Count)', 'WBC: 7,500, Hb: 14.2, Plt: 250,000', 0, 'Completed', '2026-07-01'),
+(2, 2, 5, 'Brain MRI with Contrast', 'No abnormalities detected in brain parenchyma', 0, 'Completed', '2026-07-02'),
+(3, 3, 5, 'Chest X-Ray', 'Mild hyperinflation, no consolidation', 0, 'Completed', '2026-07-03'),
+(4, 4, 6, 'Fasting Blood Sugar (FBS)', '185 mg/dL', 1, 'Completed', '2026-07-04'),
+(5, 5, 5, 'Abdominal Ultrasound', NULL, 0, 'Requested', '2026-07-05'),
+(6, 1, 6, 'Lipid Profile', NULL, 0, 'Requested', '2026-07-06'),
+(7, 2, 5, 'CT Scan of Kidneys', NULL, 0, 'Requested', '2026-07-07'),
+(8, 3, 6, 'Urine Culture', NULL, 0, 'Requested', '2026-07-08'),
+(9, 4, 5, 'Cardiac Echo', 'EF: 55%, Mild MR', 0, 'Completed', '2026-07-09'),
+(10, 5, 6, 'Vitamin D Level', '18 ng/mL (Low)', 1, 'Completed', '2026-07-10');
+GO
 
-/*INSERT INTO Inventory_Items (ItemName, ItemType, CurrentStock) VALUES
+INSERT INTO Inventory_Items (ItemName, ItemType, CurrentStock) VALUES
 ('Paracetamol 500mg', 'Medicine', 500),
 ('Ibuprofen 400mg', 'Medicine', 300),
 ('Amoxicillin 250mg', 'Medicine', 200),
@@ -121,9 +121,9 @@ GO*/
 ('Insulin Glargine', 'Medicine', 80),
 ('Ventilator Machine', 'Equipment', 10),
 ('Oxygen Cylinder', 'Equipment', 25);
-GO*/
+GO
 
-/*INSERT INTO Inventory_Transactions (ItemID, TransactionType, Quantity, TransactionDate) VALUES
+INSERT INTO Inventory_Transactions (ItemID, TransactionType, Quantity, TransactionDate) VALUES
 (1, 'Inbound', 100, '2026-07-01 08:00:00'),
 (2, 'Outbound', 50, '2026-07-02 09:00:00'),
 (3, 'Inbound', 200, '2026-07-03 10:00:00'),
@@ -134,9 +134,9 @@ GO*/
 (8, 'Outbound', 10, '2026-07-08 15:00:00'),
 (9, 'Inbound', 5, '2026-07-09 16:00:00'),
 (10, 'Outbound', 3, '2026-07-10 17:00:00');
-GO*/
+GO
 
-/*INSERT INTO Prescriptions (PatientID, StaffID, IssueDate) VALUES
+INSERT INTO Prescriptions (PatientID, StaffID, IssueDate) VALUES
 (1, 1, '2026-07-01'),
 (2, 2, '2026-07-02'),
 (3, 3, '2026-07-03'),
@@ -147,9 +147,9 @@ GO*/
 (8, 3, '2026-07-08'),
 (9, 4, '2026-07-09'),
 (10, 5, '2026-07-10');
-GO*/
+GO
 
-/*INSERT INTO Prescription_Items (PrescriptionID, ItemID, Quantity) VALUES
+INSERT INTO Prescription_Items (PrescriptionID, ItemID, Quantity) VALUES
 (1, 1, 30),
 (2, 2, 20),
 (3, 3, 15),
@@ -160,9 +160,9 @@ GO*/
 (8, 3, 14),
 (9, 2, 30),
 (10, 8, 5);
-GO*/
+GO
 
-/*INSERT INTO Drug_Interactions (DrugA_ID, DrugB_ID, Severity, Description) VALUES
+INSERT INTO Drug_Interactions (DrugA_ID, DrugB_ID, Severity, Description) VALUES
 (1, 2, 'Moderate', 'Increased risk of gastrointestinal bleeding'),
 (1, 3, 'Critical', 'Potential allergic cross-reactivity'),
 (2, 3, 'Moderate', 'Reduced efficacy of Amoxicillin'),
@@ -173,9 +173,9 @@ GO*/
 (1, 7, 'Moderate', 'Reduced renal clearance'),
 (2, 7, 'Moderate', 'Hypertensive crisis'),
 (8, 7, 'Critical', 'Severe hyperkalemia');
-GO*/
+GO
 
-/*INSERT INTO Invoices (PatientID, TotalAmount, InsuranceShare, PatientShare, Status) VALUES
+INSERT INTO Invoices (PatientID, TotalAmount, InsuranceShare, PatientShare, Status) VALUES
 (1, 2500.00, 1500.00, 1000.00, 'Pending'),
 (2, 3200.00, 2000.00, 1200.00, 'Paid'),
 (3, 4500.00, 3000.00, 1500.00, 'Pending'),
@@ -186,9 +186,9 @@ GO*/
 (8, 1500.00, 800.00, 700.00, 'Paid'),
 (9, 4200.00, 2800.00, 1400.00, 'Pending'),
 (10, 3100.00, 2000.00, 1100.00, 'Paid');
-GO*/
+GO
 
-/*INSERT INTO Payments (InvoiceID, Amount, PaymentType, PaymentDate) VALUES
+INSERT INTO Payments (InvoiceID, Amount, PaymentType, PaymentDate) VALUES
 (1, 500.00, 'Deposit', '2026-07-01 09:00:00'),
 (2, 1200.00, 'FullSettlement', '2026-07-02 10:00:00'),
 (3, 700.00, 'Deposit', '2026-07-03 11:00:00'),
@@ -199,9 +199,9 @@ GO*/
 (8, 700.00, 'FullSettlement', '2026-07-08 16:00:00'),
 (9, 800.00, 'Deposit', '2026-07-09 17:00:00'),
 (10, 1100.00, 'FullSettlement', '2026-07-10 18:00:00');
-GO*/
+GO
 
-/*INSERT INTO IoT_Devices (MAC_Address, DeviceType, Status, PatientID, BedID) VALUES
+INSERT INTO IoT_Devices (MAC_Address, DeviceType, Status, PatientID, BedID) VALUES
 ('AA:BB:CC:DD:EE:01', 'Vital Signs Band', 'Active', 1, 2),
 ('AA:BB:CC:DD:EE:02', 'Temperature Sensor', 'Active', 2, 5),
 ('AA:BB:CC:DD:EE:03', 'Vital Signs Band', 'Inactive', 3, 3),
@@ -212,9 +212,9 @@ GO*/
 ('AA:BB:CC:DD:EE:08', 'Vital Signs Band', 'Active', 8, 2),
 ('AA:BB:CC:DD:EE:09', 'Temperature Sensor', 'Active', 9, 5),
 ('AA:BB:CC:DD:EE:10', 'Vital Signs Band', 'Active', 10, 10);
-GO*/
+GO
 
-//*INSERT INTO IoT_Logs (MAC_Address, MetricType, MetricValue, Timestamp) VALUES
+INSERT INTO IoT_Logs (MAC_Address, MetricType, MetricValue, Timestamp) VALUES
 ('AA:BB:CC:DD:EE:01', 'HR', 72.5, '2026-07-10 08:00:00'),
 ('AA:BB:CC:DD:EE:02', 'Temperature', 36.6, '2026-07-10 08:05:00'),
 ('AA:BB:CC:DD:EE:03', 'HR', 110.0, '2026-07-10 08:10:00'),
@@ -225,9 +225,9 @@ GO*/
 ('AA:BB:CC:DD:EE:08', 'HR', 85.3, '2026-07-10 08:35:00'),
 ('AA:BB:CC:DD:EE:09', 'Temperature', 36.8, '2026-07-10 08:40:00'),
 ('AA:BB:CC:DD:EE:10', 'SpO2', 96.0, '2026-07-10 08:45:00');
-GO*/
+GO
 
-/*INSERT INTO Alerts (LogID, Severity, Status, GeneratedAt, ResolvedAt, ResponderID) VALUES
+INSERT INTO Alerts (LogID, Severity, Status, GeneratedAt, ResolvedAt, ResponderID) VALUES
 (1, 'Moderate', 'Acknowledged', '2026-07-10 08:02:00', '2026-07-10 08:10:00', 6),
 (2, 'Moderate', 'Resolved', '2026-07-10 08:07:00', '2026-07-10 08:20:00', 7),
 (3, 'Critical', 'Unchecked', '2026-07-10 08:12:00', NULL, NULL),
@@ -238,4 +238,4 @@ GO*/
 (8, 'Moderate', 'Unchecked', '2026-07-10 08:37:00', NULL, NULL),
 (9, 'Moderate', 'Resolved', '2026-07-10 08:42:00', '2026-07-10 08:50:00', 10),
 (10, 'Moderate', 'Acknowledged', '2026-07-10 08:47:00', '2026-07-10 08:55:00', 7);
-GO*/
+GO
