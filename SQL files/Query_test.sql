@@ -1,2 +1,2 @@
 USE HospitalDB;
-SELECT * FROM Lab_Results;
+SELECT * FROM Departments;
