@@ -230,15 +230,16 @@ INSERT INTO IoT_Logs (MAC_Address, MetricType, MetricValue, Timestamp) VALUES
 ('AA:BB:CC:DD:EE:10', 'SpO2', 96.0, '2026-07-10 08:45:00');
 GO
 
-INSERT INTO Alerts (LogID, Severity, Status, GeneratedAt, ResolvedAt, ResponderID) VALUES
-(1, 'Moderate', 'Acknowledged', '2026-07-10 08:02:00', '2026-07-10 08:10:00', 6),
-(2, 'Moderate', 'Resolved', '2026-07-10 08:07:00', '2026-07-10 08:20:00', 7),
-(3, 'Critical', 'Unchecked', '2026-07-10 08:12:00', NULL, NULL),
-(4, 'Critical', 'Acknowledged', '2026-07-10 08:17:00', '2026-07-10 08:30:00', 8),
-(5, 'Critical', 'Unchecked', '2026-07-10 08:22:00', NULL, NULL),
-(6, 'Moderate', 'Resolved', '2026-07-10 08:27:00', '2026-07-10 08:35:00', 6),
-(7, 'Critical', 'Acknowledged', '2026-07-10 08:32:00', '2026-07-10 08:45:00', 9),
-(8, 'Moderate', 'Unchecked', '2026-07-10 08:37:00', NULL, NULL),
-(9, 'Moderate', 'Resolved', '2026-07-10 08:42:00', '2026-07-10 08:50:00', 10),
-(10, 'Moderate', 'Acknowledged', '2026-07-10 08:47:00', '2026-07-10 08:55:00', 7);
+
+INSERT INTO Alerts (LogID, ResultID, Severity, Status, GeneratedAt, ResolvedAt, ResponderID) VALUES
+(1, NULL, 'Critical', 'Resolved', '2026-07-04 08:00:00', '2026-07-04 08:04:30', 6),
+(NULL, 1, 'Critical', 'Resolved', '2026-07-02 09:00:00', '2026-07-02 11:30:00', 1),
+(4, NULL, 'Critical', 'Resolved', '2026-07-04 08:05:00', '2026-07-04 08:12:15', 7), 
+(NULL, 7, 'Critical', 'Acknowledged', '2026-07-08 10:00:00', NULL, 2),          
+(9, NULL, 'Moderate', 'Acknowledged', '2026-07-04 08:15:00', NULL, 8),         
+(NULL, 10, 'Critical', 'Unchecked', '2026-07-11 12:00:00', NULL, NULL),           
+(10, NULL, 'Critical', 'Unchecked', '2026-07-04 08:20:00', NULL, NULL),       
+(1, NULL, 'Moderate', 'Resolved', '2026-07-04 08:00:00', '2026-07-04 08:05:00', 6),
+(4, NULL, 'Critical', 'Resolved', '2026-07-04 08:05:00', '2026-07-04 08:10:00', 7),
+(NULL, 1, 'Moderate', 'Resolved', '2026-07-02 09:00:00', '2026-07-02 10:15:00', 1);
 GO
