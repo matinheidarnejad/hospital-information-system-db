@@ -27,17 +27,20 @@ INSERT INTO Staff (FirstName, LastName, Role, Specialty, Phone) VALUES
 ('Steve', 'Rogers', 'Admin', NULL, '101-101-1010');
 GO
 
-INSERT INTO Appointments (PatientID, StaffID, ApptDate, ApptType, Status) VALUES
-(1, 1, '2026-07-15 09:00:00', 'InPerson', 'Scheduled'),
-(2, 2, '2026-07-16 10:30:00', 'Online', 'Scheduled'),
-(3, 3, '2026-07-17 11:00:00', 'InPerson', 'Cancelled'),
-(4, 4, '2026-07-18 14:00:00', 'InPerson', 'Scheduled'),
-(5, 5, '2026-07-19 15:30:00', 'Online', 'Rescheduled'),
-(6, 1, '2026-07-20 09:30:00', 'InPerson', 'Scheduled'),
-(7, 2, '2026-07-21 12:00:00', 'Online', 'Scheduled'),
-(8, 3, '2026-07-22 16:00:00', 'InPerson', 'Cancelled'),
-(9, 4, '2026-07-23 08:30:00', 'InPerson', 'Scheduled'),
-(10, 5, '2026-07-24 13:00:00', 'Online', 'Scheduled');
+INSERT INTO Appointments (
+    PatientID, StaffID, DepartmentID, ApptDate, ApptType, Status) VALUES
+(1, 1, NULL, '2026-07-15 09:00:00', 'InPerson', 'Scheduled'),
+(2, 2, NULL, '2026-07-16 10:30:00', 'Online', 'Scheduled'),
+(3, 3, NULL, '2026-07-17 11:00:00', 'InPerson', 'Cancelled'),
+
+(4, NULL, 5, '2026-07-18 14:00:00', 'InPerson', 'Scheduled'),
+(5, NULL, 6, '2026-07-19 15:30:00', 'InPerson', 'Scheduled'),
+(6, NULL, 5, '2026-07-20 09:30:00', 'InPerson', 'Rescheduled'),
+
+(7, 4, 1, '2026-07-21 12:00:00', 'InPerson', 'Scheduled'),
+(8, 5, 3, '2026-07-22 16:00:00', 'Online', 'Scheduled'),
+(9, 1, 2, '2026-07-23 08:30:00', 'InPerson', 'Scheduled'),
+(10, 2, 4, '2026-07-24 13:00:00', 'Online', 'Scheduled');
 GO
 
 INSERT INTO Departments (DeptName) VALUES

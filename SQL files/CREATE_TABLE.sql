@@ -52,10 +52,12 @@ GO
 CREATE TABLE Appointments (
     AppointmentID INT PRIMARY KEY IDENTITY(1,1),
     PatientID INT NOT NULL FOREIGN KEY REFERENCES Patients(PatientID),
-    StaffID INT NOT NULL FOREIGN KEY REFERENCES Staff(StaffID),
+    StaffID INT NULL FOREIGN KEY REFERENCES Staff(StaffID),
+    DepartmentID INT NULL FOREIGN KEY REFERENCES Departments(DepartmentID),
     ApptDate DATETIME NOT NULL,
     ApptType VARCHAR(20) CHECK (ApptType IN ('InPerson', 'Online')) NOT NULL,
-    Status VARCHAR(20) CHECK (Status IN ('Scheduled', 'Cancelled', 'Rescheduled')) NOT NULL
+    Status VARCHAR(20) CHECK (Status IN ('Scheduled', 'Cancelled', 'Rescheduled')) NOT NULL, 
+    CONSTRAINT CK_Appt_Target CHECK (StaffID IS NOT NULL OR DepartmentID IS NOT NULL)
 );
 GO
 
