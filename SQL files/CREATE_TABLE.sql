@@ -1,5 +1,5 @@
 -- =====================================================
--- Hospital Information System (HIS) - Complete Database Schema
+-- Hospital Information System (HIS) 
 -- =====================================================
 /*
 -- 1. Drop existing database if it exists (clean start)
@@ -81,7 +81,7 @@ GO
 -- Section 3: Clinical Records & Lab
 -- =====================================================
 
-*CREATE TABLE Medical_Records (
+CREATE TABLE Medical_Records (
     RecordID INT PRIMARY KEY IDENTITY(1,1),
     PatientID INT NOT NULL UNIQUE FOREIGN KEY REFERENCES Patients(PatientID)
 );
