@@ -1,0 +1,17 @@
+Execution Order:
+
+CREATE_TABLE.sql – Creates all database tables and relationships
+
+Samples.sql – Inserts sample data into all tables
+
+Functions.sql – Creates all user-defined functions
+
+Procedures.sql – Creates all stored procedures
+
+Triggers.sql – Creates all triggers
+
+Main_Queries.sql – Contains all main reporting queries (optional, for reference)
+
+Query_test.sql – Test queries (optional)
+
+test-functions.sql – Function tests (optional)
